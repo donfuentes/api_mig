@@ -3,11 +3,28 @@
 ## 📌 Descripción
 Esta API permite recibir archivos de migración (.csv) y cargarlos en una base de datos en **Azure SQL**. Está encapsulada en un **contenedor Docker**.
 
+Los archivos con los datos a migrar son:
+
+- jobs.csv
+- departments.csv
+- hired_employees.csv
+
 ## 🚀 Instalación
 1. Clonar el repositorio.
 2. Ejecutar:
 ```bash
 docker-compose up -d
+```
+La estructura del proyecto debe ser la siguiente:
+
+```bash
+api_mig/
+│── app/
+│   │── main.py         # Código de la API
+│   │── requirements.txt # Dependencias
+│── Dockerfile          # Configuración de Docker
+│── docker-compose.yml  # Orquestación de Docker
+│── README.md           # Documentación
 ```
 
 ## 📡 Endpoints
@@ -16,7 +33,7 @@ Sube un archivo CSV y lo inserta en la tabla correspondiente.
 
 Ejemplo:
 ```bash
-curl -X POST -F "file=@employees.csv" http://127.0.0.1:8000/upload/departments
+curl -X POST -F "file=@departments.csv" http://127.0.0.1:8000/upload/departments
 ```
 
 ## 🔑 Cadena de Conexión Azure SQL
