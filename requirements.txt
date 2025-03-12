@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+uvloop
+pandas
+pyodbc
+python-multipart

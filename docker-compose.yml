@@ -1,0 +1,9 @@
+services:
+  api:
+    build: .
+    container_name: api_mig
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_CONNECTION=Driver={ODBC Driver 18 for SQL Server};Server=tcp:testingsvr.database.windows.net,1433;Database=testdb;Uid=sqladmin;Pwd=P@55w0rd;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;
+    restart: always
